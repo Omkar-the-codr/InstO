@@ -1,6 +1,6 @@
 # InstO
 InstO - A simple web app that analyzes your Instagram connections and reveals who doesn't follow you back.
-![image](![screencapture-localhost-5173-2025-04-29-01_02_17](https://github.com/user-attachments/assets/bfc6715f-64bc-4eb7-af7c-d318913efd96)
+![image]((https://github.com/user-attachments/assets/bfc6715f-64bc-4eb7-af7c-d318913efd96)
 )
 
 ---
