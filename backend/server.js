@@ -11,20 +11,6 @@ const PORT = 5000;
 app.use(cors());
 app.use(bodyParser.json());
 
-// Fetch followers using RapidAPI
-// const fetchFollowers = async (username) => {
-//   const options = {
-//     method: "GET",
-//     url: "https://instagram-social-api.p.rapidapi.com/v1/followers",
-//     params: {
-//       username_or_id_or_url: username,
-//     //   amount: 152, // Limiting to 50 followers
-//     },
-//     headers: {
-//       "x-rapidapi-key": process.env.RAPIDAPI_KEY,
-//       "x-rapidapi-host": "instagram-social-api.p.rapidapi.com",
-//     },
-//   };
 const fetchFollowers = async (username) => {
   const options = {
     method: "GET",
@@ -51,20 +37,6 @@ const fetchFollowers = async (username) => {
   }
 };
 
-// Fetch following using RapidAPI
-// const fetchFollowing = async (username) => {
-//   const options = {
-//     method: "GET",
-//     url: "https://instagram-social-api.p.rapidapi.com/v1/following",
-//     params: {
-//       username_or_id_or_url: username,
-//     //   amount: 146, // Limiting to 50 people the user follows
-//     },
-//     headers: {
-//       "x-rapidapi-key": process.env.RAPIDAPI_KEY,
-//       "x-rapidapi-host": "instagram-social-api.p.rapidapi.com",
-//     },
-//   };
 
 
 const fetchFollowing = async (username) => {
