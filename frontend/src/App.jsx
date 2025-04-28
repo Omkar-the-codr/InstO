@@ -2,9 +2,6 @@ import React, { useState } from "react";
 import Header from "./components/Header.jsx";
 import UsernameForm from "./components/UsernameForm.jsx";
 import Results from "./components/Results.jsx";
-import Features from "./components/Features.jsx";
-import HowItWorks from "./components/HowItWorks.jsx";
-import Footer from "./components/Footer.jsx";
 
 function App() {
   const [followers, setFollowers] = useState([]);
@@ -36,6 +33,7 @@ function App() {
         throw new Error(data.message || "Failed to analyze.");
       }
 
+      // ✅ Fix this part:
       setFollowers(data[0]?.followers || []);
       setFollowing(data[1]?.following || []);
       setUnfollowers(data[2]?.unfollowers || []);
@@ -47,32 +45,26 @@ function App() {
     }
   };
 
+
   return (
-    <div className="flex flex-col min-h-screen font-sans">
+    <div className="min-h-screen bg-gray-100 p-4 flex flex-col items-center">
       <Header />
-      <main className="flex-grow">
-        <section className="bg-gradient-to-r from-pink-100 via-purple-100 to-orange-100 py-20 text-center">
-          <h1 className="text-4xl font-bold mb-4">Discover Who Doesn't Follow You Back</h1>
-          <p className="text-gray-600 mb-8">Get insights about your Instagram followers in seconds</p>
-          <UsernameForm onSubmit={handleAnalyze} />
-          <p className="text-xs text-gray-500 mt-4 flex justify-center items-center gap-2">
-            <span>🔒</span> We don't store your data or passwords
-          </p>
-        </section>
+      <UsernameForm onSubmit={handleAnalyze}/>
 
-        <section className="py-10 container mx-auto px-4">
-          {loading && <p className="text-center text-gray-600 text-lg">Loading...</p>}
-          {error && <p className="text-center text-red-500 text-lg">{error}</p>}
+      {loading && <p className="mt-8 text-gray-600">Loading...</p>}
+      {error && <p className="mt-8 text-red-500">{error}</p>}
 
-          {!loading && !error && (
-            <Results followers={followers} following={following} unfollowers={unfollowers} />
-          )}
-        </section>
-
-        <Features />
-        <HowItWorks />
-      </main>
-      <Footer />
+      {!loading &&
+        !error &&
+        (followers.length > 0 ||
+          following.length > 0 ||
+          unfollowers.length > 0) && (
+          <Results
+            followers={followers}
+            following={following}
+            unfollowers={unfollowers}
+          />
+        )}
     </div>
   );
 }
