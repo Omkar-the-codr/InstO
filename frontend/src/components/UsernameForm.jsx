@@ -7,22 +7,21 @@ function UsernameForm({ onSubmit }) {
     e.preventDefault();
     if (username.trim()) {
       onSubmit(username.trim());
-      setUsername("");
     }
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col items-center mt-6">
+    <form onSubmit={handleSubmit} className="flex justify-center items-center max-w-md mx-auto">
       <input
         type="text"
+        className="flex-1 py-3 px-4 rounded-l-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-pink-400"
+        placeholder="Enter your Instagram username"
         value={username}
         onChange={(e) => setUsername(e.target.value)}
-        placeholder="Enter Instagram Username"
-        className="border p-2 rounded-md w-72 focus:outline-none focus:ring-2 focus:ring-indigo-400"
       />
       <button
         type="submit"
-        className="bg-indigo-500 text-white py-2 px-6 rounded mt-4 hover:bg-indigo-600"
+        className="bg-gradient-to-r from-pink-500 to-orange-400 text-white font-semibold px-6 py-3 rounded-r-full hover:opacity-90"
       >
         Analyze
       </button>
