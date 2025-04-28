@@ -52,10 +52,10 @@ npm install
 
 ```dotenv
 RAPIDAPI_KEY=your_rapidapi_key_here
-RAPIDAPI_HOST=instagram-social-api.p.rapidapi.com
-RAPIDAPI_BASE_URL=https://instagram-social-api.p.rapidapi.com
-RAPIDAPI_FOLLOWER_ENDPOINT=/v1/followers
-RAPIDAPI_FOLLOWING_ENDPOINT=/v1/following
+RAPIDAPI_HOST= Your Host
+RAPIDAPI_BASE_URL=https Your Base URL
+RAPIDAPI_FOLLOWER_ENDPOINT= Your Follower Endpoint
+RAPIDAPI_FOLLOWING_ENDPOINT= Your Following Endpoint
 ```
 
 - Start backend server:
